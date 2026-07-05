@@ -84,7 +84,7 @@ export function HUD() {
         {/* Angle + power */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: 260 }}>
           <div>
-            <div style={{ fontSize: 12, color: '#8fa0c4' }}>Angle: {Math.round(hud.angleDeg)}\u00b0</div>
+            <div style={{ fontSize: 12, color: '#8fa0c4' }}>Angle: {Math.round(hud.angleDeg)}°</div>
             <input type="range" min={0} max={180} value={hud.angleDeg} disabled={!hud.isMyTurn}
               style={{ width: '100%' }}
               onChange={(e) => EventBus.emit(EVT.SET_ANGLE, Number(e.target.value))} />
