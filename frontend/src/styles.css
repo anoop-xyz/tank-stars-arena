@@ -1,0 +1,51 @@
+:root {
+  --bg: #0b1020;
+  --panel: #141c33;
+  --accent: #4ea1ff;
+  --accent-2: #ffd24a;
+  --text: #e8eefc;
+  --muted: #8fa0c4;
+  --danger: #e23b3b;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; height: 100%; width: 100%; overflow: hidden; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at 50% 20%, #1a2547 0%, var(--bg) 70%);
+  color: var(--text);
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
+}
+
+.overlay {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 20px; text-align: center; padding: 24px;
+}
+.title { font-size: clamp(32px, 6vw, 68px); font-weight: 800; letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text;
+  background-clip: text; color: transparent; }
+.subtitle { color: var(--muted); font-size: clamp(14px, 2vw, 18px); margin-top: -8px; }
+.panel { background: rgba(20,28,51,0.9); border: 1px solid rgba(78,161,255,0.25);
+  border-radius: 18px; padding: 28px; min-width: min(420px, 90vw); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.btn { appearance: none; border: none; cursor: pointer; border-radius: 12px; padding: 14px 22px;
+  font-size: 17px; font-weight: 700; color: #071021; background: linear-gradient(90deg, var(--accent), #7ec0ff);
+  transition: transform .08s ease, filter .2s ease; width: 100%; }
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: translateY(1px) scale(0.99); }
+.btn.secondary { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.2); }
+.btn.gold { background: linear-gradient(90deg, var(--accent-2), #ffe38a); }
+.row { display: flex; gap: 12px; }
+.input { width: 100%; padding: 14px; font-size: 22px; letter-spacing: 6px; text-align: center;
+  border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); background: #0c1striped; background: #0c1226;
+  color: var(--text); }
+.code { font-size: 40px; font-weight: 800; letter-spacing: 10px; color: var(--accent-2); }
+.slider { width: 100%; }
+.small { font-size: 13px; color: var(--muted); }
+.spinner { width: 46px; height: 46px; border: 4px solid rgba(255,255,255,0.15);
+  border-top-color: var(--accent); border-radius: 50%; animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.fade-in { animation: fade .3s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+#game-root { position: absolute; inset: 0; }
